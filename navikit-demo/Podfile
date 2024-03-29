@@ -1,0 +1,7 @@
+platform :ios, '13.0'
+
+target 'NavikitDemo' do
+    pod 'MappableMobile', '1.2.1-navikit'
+    pod 'MMKStylingAutomotiveNavigation', '1.2.1'
+    pod 'MMKStylingRoadEvents', '1.2.1'
+end

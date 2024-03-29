@@ -2,8 +2,6 @@
 //  RoutingViewModel.swift
 //  MapRouting
 //
-//  Created by Daniil Pustotin on 28.08.2023.
-//
 
 import UIKit
 import MappableMobile
@@ -87,7 +85,7 @@ final class RoutingViewModel {
                 )
             ]
 
-        let drivingOptions = MMKDrivingDrivingOptions()
+        let drivingOptions = MMKDrivingOptions()
         let vehicleOptions = MMKDrivingVehicleOptions()
 
         drivingSession = drivingRouter.requestRoutes(
@@ -136,7 +134,9 @@ final class RoutingViewModel {
 
     // MARK: - Private properties
 
-    private lazy var drivingRouter: MMKDrivingRouter = MMKDirections.sharedInstance().createDrivingRouter()
+    private lazy var drivingRouter: MMKDrivingRouter = MMKDirections.sharedInstance().createDrivingRouter(
+        withType: .combined
+    )
     private var drivingSession: MMKDrivingSession?
 
     private weak var controller: UIViewController?

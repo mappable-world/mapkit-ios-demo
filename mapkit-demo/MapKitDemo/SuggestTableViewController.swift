@@ -24,8 +24,8 @@ class SuggestViewController: BaseMapViewController, UITableViewDataSource {
         tableView.dataSource = self
     }
 
-    func onSuggestResponse(_ items: [MMKSuggestItem]) {
-        suggestResults = items
+    func onSuggestResponse(_ resp: MMKSuggestResponse) {
+        suggestResults = resp.items
         tableView.reloadData()
     }
 
@@ -45,7 +45,7 @@ class SuggestViewController: BaseMapViewController, UITableViewDataSource {
     }
 
     @IBAction func queryChanged(_ sender: UITextField) {
-        let suggestHandler = {(response: [MMKSuggestItem]?, error: Error?) -> Void in
+        let suggestHandler = {(response: MMKSuggestResponse?, error: Error?) -> Void in
             if let resp = response {
                 self.onSuggestResponse(resp)
             } else {

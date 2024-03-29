@@ -18,6 +18,15 @@ enum Const {
     static let draggablePlacemarkCenter = MMKPoint(latitude: 25.224, longitude: 55.289)
     static let animatedPlacemarkCenter = MMKPoint(latitude: 25.229, longitude: 55.300)
 
+    static let masstransitPoint = MMKPoint(latitude: 25.229762, longitude: 55.289311)
+    static let masstransitRouteStartLocation = MMKPoint(latitude: 25.217344, longitude: 55.361048);
+    static let masstransitRouteEndLocation = MMKPoint(latitude: 25.210210, longitude: 55.266554);
+    static let undergroundStrokeColor = UIColor.gray
+    static let busStrokeColor = UIColor.green
+    static let tramwayStrokeColor = UIColor.red
+    static let publicTransportStrokeColor = UIColor.blue
+    static let nonPublicTransportStrokeColor = UIColor.black
+
 	static let coloredPolylinePoints = [
 		MMKPoint(latitude: 25.249941, longitude: 55.310250),
 		MMKPoint(latitude: 25.250867, longitude: 55.313382),
