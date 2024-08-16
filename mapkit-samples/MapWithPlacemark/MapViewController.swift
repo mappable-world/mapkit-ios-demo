@@ -51,6 +51,7 @@ class MapViewController: UIViewController {
             style: MMKTextStyle(
                 size: 10.0,
                 color: .black,
+                outlineWidth: 1.0,
                 outlineColor: .white,
                 placement: .top,
                 offset: 0.0,

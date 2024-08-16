@@ -134,7 +134,7 @@ final class RoutingViewModel {
 
     // MARK: - Private properties
 
-    private lazy var drivingRouter: MMKDrivingRouter = MMKDirections.sharedInstance().createDrivingRouter(
+    private lazy var drivingRouter: MMKDrivingRouter = MMKDirectionsFactory.instance().createDrivingRouter(
         withType: .combined
     )
     private var drivingSession: MMKDrivingSession?

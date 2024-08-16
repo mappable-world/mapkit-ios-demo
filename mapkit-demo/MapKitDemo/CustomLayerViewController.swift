@@ -19,7 +19,6 @@ class CustomLayerViewController: BaseMapViewController {
 
     // Client code must retain strong references to providers and projection
     let tilesUrlProvider = CustomTilesUrlProvider()
-    let projection = MMKProjections.wgs84Mercator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +32,19 @@ class CustomLayerViewController: BaseMapViewController {
             animateOnActivation: true,
             tileAppearingAnimationDuration: 0,
             overzoomMode: .enabled,
-            transparent: false
+            transparent: false,
+            versionSupport: false
         )
 
-        layer = mapView.mapWindow.map.addLayer(
+        mapView.mapWindow.map.addTileLayer(
             withLayerId: "mapkit_logo",
-            format: MMKTileFormat.png,
             layerOptions: layerOptions,
-            tileUrlProvider: tilesUrlProvider,
-            imageUrlProvider: MMKImagesDefaultUrlProvider(),
-            projection: projection)
+            createTileDataSource: {(builder: MMKTileDataSourceBuilder) in
+                builder.setTileFormatWith(.png)
+                builder.setTileUrlProviderWith(self.tilesUrlProvider)
+                builder.setImageUrlProviderWith(MMKImagesDefaultUrlProvider())
+            }
+        )
 
-        layer!.dataSourceLayer().invalidate(withVersion: "0.0.0")
     }
 }

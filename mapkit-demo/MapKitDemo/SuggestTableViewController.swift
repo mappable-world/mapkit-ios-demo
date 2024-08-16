@@ -13,7 +13,7 @@ class SuggestViewController: BaseMapViewController, UITableViewDataSource {
     @IBOutlet weak var searchBar: UITextField!
 
     var suggestResults: [MMKSuggestItem] = []
-    let searchManager = MMKSearch.sharedInstance().createSearchManager(with: .combined)
+    let searchManager = MMKSearchFactory.instance().createSearchManager(with: .combined)
     var suggestSession: MMKSearchSuggestSession!
 
     let SUGGEST_OPTIONS = MMKSuggestOptions()

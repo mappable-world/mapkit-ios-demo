@@ -222,7 +222,7 @@ class SearchViewModel {
 
     // MARK: - Private properties
 
-    private lazy var searchManager = MMKSearch.sharedInstance().createSearchManager(with: .combined)
+    private lazy var searchManager = MMKSearchFactory.instance().createSearchManager(with: .combined)
     private var searchSession: MMKSearchSession?
     private lazy var suggestSession: MMKSearchSuggestSession = searchManager.createSuggestSession()
     private var zoomToSearchResult = false
@@ -242,7 +242,8 @@ class SearchViewModel {
         static let suggestOptions = MMKSuggestOptions(
             suggestTypes: [.biz, .geo, .transit],
             userPosition: nil,
-            suggestWords: true
+            suggestWords: true,
+            strictBounds: false
         )
         static let searchOptions: MMKSearchOptions = {
             let options = MMKSearchOptions()
