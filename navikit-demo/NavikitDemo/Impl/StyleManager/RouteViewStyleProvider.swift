@@ -20,6 +20,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
         with flags: MMKDrivingFlags,
         isSelected: Bool,
         isNightMode: Bool,
+        navigationLayerMode: MMKNavigationLayerMode,
         jamStyle: MMKNavigationJamStyle
     ) {
         carNavigationStyleProvider
@@ -28,6 +29,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
                 with: flags,
                 isSelected: isSelected,
                 isNightMode: isNightMode,
+                navigationLayerMode: navigationLayerMode,
                 jamStyle: jamStyle
             )
     }
@@ -36,6 +38,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
         with flags: MMKDrivingFlags,
         isSelected: Bool,
         isNightMode: Bool,
+        navigationLayerMode: MMKNavigationLayerMode,
         polylineStyle: MMKPolylineStyle
     ) {
         carNavigationStyleProvider
@@ -44,6 +47,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
                 with: flags,
                 isSelected: isSelected,
                 isNightMode: isNightMode,
+                navigationLayerMode: navigationLayerMode,
                 polylineStyle: polylineStyle
             )
     }
@@ -52,6 +56,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
         with flags: MMKDrivingFlags,
         isSelected: Bool,
         isNightMode: Bool,
+        navigationLayerMode: MMKNavigationLayerMode,
         arrowStyle: MMKArrowStyle
     ) {
         carNavigationStyleProvider
@@ -60,6 +65,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
                 with: flags,
                 isSelected: isSelected,
                 isNightMode: isNightMode,
+                navigationLayerMode: navigationLayerMode,
                 arrowStyle: arrowStyle
             )
     }
@@ -68,6 +74,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
         with flags: MMKDrivingFlags,
         isSelected: Bool,
         isNightMode: Bool,
+        navigationLayerMode: MMKNavigationLayerMode,
         routeStyle: MMKNavigationRouteStyle
     ) {
         carNavigationStyleProvider
@@ -76,6 +83,7 @@ final class RouteViewStyleProvider: NSObject, MMKNavigationRouteViewStyleProvide
                 with: flags,
                 isSelected: isSelected,
                 isNightMode: isNightMode,
+                navigationLayerMode: navigationLayerMode,
                 routeStyle: routeStyle
             )
 

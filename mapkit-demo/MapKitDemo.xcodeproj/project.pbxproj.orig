@@ -76,6 +76,8 @@
 		E7E5C334204FDBAE007842E3 /* DrivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5C333204FDBAE007842E3 /* DrivingViewController.swift */; };
 		E7E5C336204FE6F2007842E3 /* MapObjects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C335204FE6F2007842E3 /* MapObjects.storyboard */; };
 		E7E5C338204FE71D007842E3 /* MapObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5C337204FE71D007842E3 /* MapObjectsViewController.swift */; };
+		E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C339204FF234007842E3 /* Panorama.storyboard */; };
+		E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E5C33B204FF261007842E3 /* PanoramaViewController.swift */; };
 		F7F2A04729D49564007E3050 /* JamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB95B8D2397FE4D00BC2EBF /* JamsViewController.swift */; };
 		F923CC792419037B006051F5 /* Customization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F923CC782419037B006051F5 /* Customization.storyboard */; };
 		F923CC7B2419038C006051F5 /* CustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923CC7A2419038C006051F5 /* CustomizationViewController.swift */; };
@@ -133,6 +135,8 @@
 		E7E5C333204FDBAE007842E3 /* DrivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingViewController.swift; sourceTree = "<group>"; };
 		E7E5C335204FE6F2007842E3 /* MapObjects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapObjects.storyboard; sourceTree = "<group>"; };
 		E7E5C337204FE71D007842E3 /* MapObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapObjectsViewController.swift; sourceTree = "<group>"; };
+		E7E5C339204FF234007842E3 /* Panorama.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Panorama.storyboard; sourceTree = "<group>"; };
+		E7E5C33B204FF261007842E3 /* PanoramaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaViewController.swift; sourceTree = "<group>"; };
 		F923CC782419037B006051F5 /* Customization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Customization.storyboard; sourceTree = "<group>"; };
 		F923CC7A2419038C006051F5 /* CustomizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationViewController.swift; sourceTree = "<group>"; };
 		F923CC7C24191773006051F5 /* customization_example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = customization_example.json; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 				E7E5C333204FDBAE007842E3 /* DrivingViewController.swift */,
 				E7E5C335204FE6F2007842E3 /* MapObjects.storyboard */,
 				E7E5C337204FE71D007842E3 /* MapObjectsViewController.swift */,
+				E7E5C339204FF234007842E3 /* Panorama.storyboard */,
+				E7E5C33B204FF261007842E3 /* PanoramaViewController.swift */,
 				E7B58E312050029100D95768 /* Search.storyboard */,
 				E7B58E332050031200D95768 /* SearchViewController.swift */,
 				E7A2503320501ECF0022D9B3 /* UserLocation.storyboard */,
@@ -370,6 +376,7 @@
 			files = (
 				BD4792202A6FBE55003F517A /* About.storyboard in Resources */,
 				E7E5C332204FDB59007842E3 /* Driving.storyboard in Resources */,
+				E7E5C33A204FF234007842E3 /* Panorama.storyboard in Resources */,
 				F923CC792419037B006051F5 /* Customization.storyboard in Resources */,
 				E7DE519822560B67006B559C /* Clustering.storyboard in Resources */,
 				BDB95B8C2397FDF800BC2EBF /* Jams.storyboard in Resources */,
@@ -509,6 +516,7 @@
 				E748A878205A94AA00803AF8 /* CustomLayerViewController.swift in Sources */,
 				BD9289E62837BB31005A26D6 /* BaseMapViewController.swift in Sources */,
 				E779F00E204EDC5200750E10 /* MainMenuTableViewController.swift in Sources */,
+				E7E5C33C204FF261007842E3 /* PanoramaViewController.swift in Sources */,
 				BD1B8EA62B235E39003005E3 /* MasstransitRoutingViewController.swift in Sources */,
 				5CB3FE1324DE3E5C005BC102 /* MapSelectionViewController.swift in Sources */,
 				BD9289E22837B3EC005A26D6 /* BaseMapView.swift in Sources */,

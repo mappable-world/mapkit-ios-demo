@@ -13,7 +13,6 @@ final class SettingsBinderImpl: SettingsBinder {
     init(
         settingsRepository: SettingsRepository,
         simulationManager: SimulationManager,
-        roadEventsLayer: MMKRoadEventsLayer,
         navigationStyleManager: NavigationStyleManager,
         navigationLayer: MMKNavigationLayer,
         navigation: MMKNavigation,
@@ -23,7 +22,6 @@ final class SettingsBinderImpl: SettingsBinder {
     ) {
         self.settingsRepository = settingsRepository
         self.simulationManager = simulationManager
-        self.roadEventsLayer = roadEventsLayer
         self.navigationStyleManager = navigationStyleManager
         self.navigationLayer = navigationLayer
         self.navigation = navigation
@@ -36,7 +34,6 @@ final class SettingsBinderImpl: SettingsBinder {
 
     func bindSettings() {
         bindSimulationSpeed()
-        bindRoadEventsLayer()
         bindNavigationLayer()
         bindNavigation()
         bindspeaker()
@@ -51,17 +48,6 @@ final class SettingsBinderImpl: SettingsBinder {
                 self?.simulationManager.setSpeed(with: Double(newValue))
             }
             .store(in: &cancellablesBag)
-    }
-
-    private func bindRoadEventsLayer() {
-        settingsRepository.roadEventsOnRoute
-            .forEach { tag, value in
-                value
-                    .sink { [weak self] newValue in
-                        self?.roadEventsLayer.setRoadEventVisibleOnRouteWith(tag, on: newValue)
-                    }
-                    .store(in: &cancellablesBag)
-            }
     }
 
     private func bindNavigationLayer() {
@@ -93,6 +79,15 @@ final class SettingsBinderImpl: SettingsBinder {
                 self?.navigationLayer.setShowBalloonsGeometryWithEnabled(newValue)
             }
             .store(in: &cancellablesBag)
+
+        settingsRepository.roadEventsOnRoute
+            .forEach { tag, value in
+                value
+                    .sink { [weak self] newValue in
+                        self?.navigationLayer.setRoadEventVisibleOnRouteWith(tag, on: newValue)
+                    }
+                    .store(in: &cancellablesBag)
+            }
     }
 
     private func bindNavigation() {
@@ -181,7 +176,6 @@ final class SettingsBinderImpl: SettingsBinder {
 
     private let settingsRepository: SettingsRepository
     private let simulationManager: SimulationManager
-    private let roadEventsLayer: MMKRoadEventsLayer
     private let navigationStyleManager: NavigationStyleManager
     private let navigationLayer: MMKNavigationLayer
     private let navigation: MMKNavigation

@@ -25,14 +25,14 @@ final class NavigationLayerManagerImpl: NSObject, NavigationLayerManager, MMKRou
     }
 
     func onRouteViewTap(withRoute route: MMKRouteView) {
-        switch navigationLayer.routesSource {
-        case .navigation:
+        switch navigationLayer.mode {
+        case .routeSelection:
             navigationLayer.selectRoute(withRoute: route)
 
         case .guidance:
             navigationLayer.navigation.guidance.switchToRoute(with: route.route)
         @unknown default:
-            print("Invalid routes source - \(navigationLayer.routesSource)")
+            print("Invalid navigation layer mode - \(navigationLayer.mode)")
         }
     }
 

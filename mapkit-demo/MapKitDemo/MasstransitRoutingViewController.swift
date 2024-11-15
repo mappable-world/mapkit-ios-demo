@@ -2,19 +2,19 @@ import UIKit
 import MappableMobile
 
 class MasstransitRoutingViewController : BaseMapViewController {
-    
+
     private var router: MMKMasstransitRouter? = nil
     private var masstransitSession: MMKMasstransitSession? = nil
     private var mapObjects: MMKMapObjectCollection? = nil
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         mapObjects = mapView.mapWindow.map.mapObjects
-        
+
         mapView.mapWindow.map.move(
             with: MMKCameraPosition(target: Const.masstransitPoint, zoom: 12, azimuth: 0, tilt: 0))
-        
+
         let requestPoints : [MMKRequestPoint] = [
             MMKRequestPoint(
                 point: Const.masstransitRouteStartLocation, type: .waypoint,
@@ -31,14 +31,14 @@ class MasstransitRoutingViewController : BaseMapViewController {
                 self.onRoutesError(error)
             }
         }
-        
+
         let options = MMKTransitOptions(avoid: MMKFilterVehicleTypes(rawValue: 0), timeOptions: MMKTimeOptions())
         let routeOptions = MMKRouteOptions()
-        
+
         router = MMKTransportFactory.instance().createMasstransitRouter()
         masstransitSession = router?.requestRoutes(with: requestPoints, transitOptions: options, routeOptions: routeOptions, routeHandler: responseHandler)
     }
-    
+
     private func onRoutesReceived(_ routes: [MMKMasstransitRoute]) {
         for section in routes.first!.sections {
             let subpolyline = MMKSubpolylineHelper.subpolyline(with: routes.first!.geometry, subpolyline: section.geometry)
@@ -60,7 +60,7 @@ class MasstransitRoutingViewController : BaseMapViewController {
 
         present(alert, animated: true, completion: nil)
     }
-    
+
     private func drawSection(_ data: MMKMasstransitSectionMetadataSectionData, geometry: MMKPolyline) {
         // Draw a section polyline on a map
         // Set its color depending on the information which the section contains
@@ -110,7 +110,7 @@ class MasstransitRoutingViewController : BaseMapViewController {
             polylineMapObject.setStrokeColorWith(Const.nonPublicTransportStrokeColor);
         }
     }
-    
+
     private func getKnownVehicleType(_ transport: MMKMasstransitTransport, _ knownVehicleTypes: Set<String>) -> String? {
         // A public transport line may have a few 'vehicle types' associated with it
         // These vehicle types are sorted from more specific (say, 'histroic_tram')
