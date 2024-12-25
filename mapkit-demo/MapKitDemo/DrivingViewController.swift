@@ -18,10 +18,10 @@ class DrivingViewController: BaseMapViewController {
         let requestPoints : [MMKRequestPoint] = [
             MMKRequestPoint(
                 point: Const.routeStartPoint, type: .waypoint,
-                pointContext: nil, drivingArrivalPointId: nil),
+                pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil),
             MMKRequestPoint(
                 point: Const.routeEndPoint, type: .waypoint,
-                pointContext: nil, drivingArrivalPointId: nil),
+                pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil),
             ]
 
         let responseHandler = {(routesResponse: [MMKDrivingRoute]?, error: Error?) -> Void in

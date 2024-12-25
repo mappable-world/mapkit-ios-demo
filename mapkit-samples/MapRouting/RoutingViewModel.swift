@@ -72,17 +72,19 @@ final class RoutingViewModel {
                     point: routePoints.first!,
                     type: .waypoint,
                     pointContext: nil,
-                    drivingArrivalPointId: nil
+                    drivingArrivalPointId: nil,
+                    indoorLevelId: nil
                 )
             ] +
             routePoints[1..<routePoints.count - 1]
-            .map { MMKRequestPoint(point: $0, type: .viapoint, pointContext: nil, drivingArrivalPointId: nil) } +
+            .map { MMKRequestPoint(point: $0, type: .viapoint, pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil) } +
             [
                 MMKRequestPoint(
                     point: routePoints.last!,
                     type: .waypoint,
                     pointContext: nil,
-                    drivingArrivalPointId: nil
+                    drivingArrivalPointId: nil,
+                    indoorLevelId: nil
                 )
             ]
 

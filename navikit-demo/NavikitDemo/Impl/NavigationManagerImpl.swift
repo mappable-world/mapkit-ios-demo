@@ -117,7 +117,7 @@ final class NavigationManagerImpl: NSObject, NavigationManager, ObservableObject
             return []
         }
         return [
-            MMKRequestPoint(point: location, type: .waypoint, pointContext: nil, drivingArrivalPointId: nil)
+            MMKRequestPoint(point: location, type: .waypoint, pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil)
         ] + points
     }
 

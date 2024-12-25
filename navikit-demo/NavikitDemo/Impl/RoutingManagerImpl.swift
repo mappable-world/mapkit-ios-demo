@@ -14,7 +14,8 @@ final class RoutingManagerImpl: BasicGuidanceListener, RoutingManager {
     // MARK: - Public methods
 
     func addRoutePoint(_ point: MMKPoint, type: MMKRequestPointType = .waypoint) {
-        let requestPoint = MMKRequestPoint(point: point, type: type, pointContext: nil, drivingArrivalPointId: nil)
+        let requestPoint = MMKRequestPoint(
+            point: point, type: type, pointContext: nil, drivingArrivalPointId: nil, indoorLevelId: nil)
         switch type {
         case .waypoint:
             requestPoints = [requestPoint]
