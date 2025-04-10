@@ -23,11 +23,12 @@ extension MMKRoadEventsEventTag: CaseIterable {
             .overtakingDanger,
             .pedestrianDanger,
             .police,
+            .policePatrol,
             .reconstruction,
             .roadMarkingControl,
             .school,
             .speedControl,
-            .trafficAlert
+            .trafficControl
         ]
     }
 }
