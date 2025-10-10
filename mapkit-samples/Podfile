@@ -1,7 +1,7 @@
 platform :ios, '12.0'
 
 def mapkit_pod
-  pod 'MappableMobile', '4.23.0-full'
+  pod 'MappableMobile', '4.24.0-full'
 end
 
 target 'MapWithPlacemark' do
