@@ -21,17 +21,19 @@ final class SimulationManagerImpl: NSObject, SimulationManager, MMKLocationSimul
     // MARK: - Public methods
 
     func start(route: MMKDrivingRoute) {
-        locationSimulator = MMKMapKit.sharedInstance().createLocationSimulator(withGeometry: route.geometry)
+        self.speed = Double(settingsRepository.simulationSpeed.value)
 
+        locationSimulator = MMKMapKit.sharedInstance().createLocationSimulator()
         locationSimulator.subscribeForSimulatorEvents(with: self)
-        locationSimulator.speed = speed
-
+        
+        let locationSettings = MMKLocationSettingsFactory.coarseSettings()
+        locationSettings.speed = speed
+        let simulationSettings =
+            [MMKSimulationSettings(geometry: route.geometry, locationSettings: locationSettings)]
         MMKMapKit.sharedInstance().setLocationManagerWith(locationSimulator)
 
-        locationSimulator.startSimulation(with: .coarse)
+        locationSimulator.startSimulation(withSettings: simulationSettings)
         isSimulationActive.send(true)
-
-        setSpeed(with: Double(settingsRepository.simulationSpeed.value))
     }
 
     func onSimulationFinished() {
